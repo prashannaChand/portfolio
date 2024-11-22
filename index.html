@@ -1,116 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Prashanna Chand - Software Student Portfolio" />
-    <meta name="author" content="Prashanna Chand" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prashanna Chand's Personal Portfolio">
+    <meta name="author" content="Prashanna Chand">
     <title>Prashanna Chand | Portfolio</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: 'Lato', sans-serif;
             margin: 0;
-            background-color: #f4f4f9;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background: #f4f4f9;
             color: #333;
         }
 
-        .masthead {
-            background: linear-gradient(135deg, #007bff, #6c757d);
+        header {
+            background: linear-gradient(135deg, #1e1e2f, #3b3b5c);
             color: #fff;
             padding: 4rem 0;
             text-align: center;
         }
 
-        .masthead img {
+        header img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
+            margin-bottom: 1rem;
             border: 5px solid #fff;
-            margin-bottom: 1.5rem;
         }
 
-        .masthead h1 {
-            font-family: 'Montserrat', sans-serif;
+        header h1 {
+            margin: 0;
             font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-weight: bold;
         }
 
-        .masthead p {
+        header p {
             font-size: 1.2rem;
-            font-weight: 300;
-            margin-bottom: 1.5rem;
+            margin: 0.5rem 0 1rem;
         }
 
-        .masthead nav a {
-            margin: 0 0.5rem;
-            font-size: 1.5rem;
+        header nav a {
+            margin: 0 10px;
             color: #fff;
+            font-size: 1.2rem;
             text-decoration: none;
-            transition: transform 0.2s ease-in-out;
+            transition: color 0.3s;
         }
 
-        .masthead nav a:hover {
-            transform: scale(1.2);
+        header nav a:hover {
             color: #ffdd57;
         }
 
-        .copyright {
-            background-color: #333;
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1e1e2f;
+        }
+
+        .skills,
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .skill-card,
+        .project-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            width: 300px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-card h3,
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            background: #1e1e2f;
             color: #fff;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #ffdd57;
+            color: #1e1e2f;
+        }
+
+        footer {
+            background: #1e1e2f;
+            color: #fff;
+            text-align: center;
             padding: 1rem 0;
             font-size: 0.9rem;
         }
-
-        .copyright small {
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 768px) {
-            .masthead h1 {
-                font-size: 2rem;
-            }
-            .masthead p {
-                font-size: 1rem;
-            }
-        }
     </style>
 </head>
-<body id="page-top">
-    <!-- Header Section -->
-    <header class="masthead">
-        <div class="container">
-            <!-- Profile Picture -->
-            <img class="masthead-avatar" src="brp.jpg" alt="Profile Picture of Prashanna Chand" />
-            <!-- Name -->
-            <h1 class="masthead-heading text-uppercase">Prashanna Chand</h1>
-            <!-- Tagline -->
-            <p class="masthead-subheading font-weight-light">Software Student | Aspiring Developer</p>
-            <!-- Social Links -->
-            <nav>
-                <a href="https://www.facebook.com/prashanna.chand" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://github.com/Optboi" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/prashanna-chand/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            </nav>
-        </div>
-    </header>
+<body>
 
-    <!-- Footer Section -->
-    <div class="copyright text-center">
-        <div class="container">
-            <small>Copyright &copy; 2024 Prashanna Chand. All Rights Reserved.</small>
-        </div>
-    </div>
+<header>
+    <img src="brp.jpg" alt="Profile Picture">
+    <h1>Prashanna Chand</h1>
+    <p>Machine learning enthusiast | Aspiring Developer</p>
+    <nav>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-    <!-- Bootstrap Core JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<div class="container">
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills">
+            <div class="skill-card">
+                <h3>HTML & CSS</h3>
+                <p>Proficient in creating responsive designs and modern layouts.</p>
+            </div>
+            <div class="skill-card">
+                <h3>JavaScript</h3>
+                <p>Experience with dynamic web applications.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Python</h3>
+                <p>Familiar with automation, scripting, data handling and data analysis.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>A personal portfolio showcasing my skills and projects.</p>
+                <a href="https://github.com/Optboi" target="_blank">View on GitHub</a>
+            </div>
+            <div class="project-card">
+                <h3>Library management system</h3>
+                <p>A web app using APIs to display weather data in real-time.</p>
+                <a href="https://github.com/Optboi" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</div>
+
+<footer>
+    <p>© 2024 Prashanna Chand. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
