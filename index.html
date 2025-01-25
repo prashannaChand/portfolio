@@ -4,13 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Prashanna Chand's Personal Portfolio">
+    <meta name="description" content="Prashanna Chand | Portfolio">
     <meta name="author" content="Prashanna Chand">
     <title>Prashanna Chand | Portfolio</title>
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <!-- Custom CSS -->
     <style>
         * {
@@ -21,9 +24,17 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background: #f0f0f0;
-            color: #333;
+            background-color: #111;
+            color: #fff;
             line-height: 1.6;
+            scroll-behavior: smooth;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;  /* Arrange sections in column layout */
+        }
+
+        main {
+            flex: 1; /* Ensures the footer is at the bottom */
         }
 
         /* Navbar Styling */
@@ -32,7 +43,7 @@
             top: 0;
             left: 0;
             right: 0;
-            background: #111;
+            background: transparent;
             color: #fff;
             padding: 1rem 2rem;
             display: flex;
@@ -48,7 +59,7 @@
 
         nav a {
             color: #fff;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin: 0 1rem;
             text-decoration: none;
             transition: color 0.3s ease;
@@ -58,110 +69,128 @@
             color: #ffdd57;
         }
 
-        /* Header Section with Background Image */
-        header {
+        /* Hero Section */
+        .hero {
             height: 100vh;
-            background: url('https://wallpapercave.com/wp/wp9153584.png') center/cover no-repeat;
-            color: #fff;
+            background: #111;  /* Solid color background for the hero section */
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 80px; /* Offset for navbar */
+            color: #fff;
+            padding: 0 2rem;
         }
 
-        header img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            margin-bottom: 2rem;
-            border: 5px solid #fff;
+        /* Flex container for text and image */
+        .hero .hero-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            gap: 2rem;
         }
 
-        header h1 {
+        /* Text container */
+        .hero .text-container {
+            max-width: 50%;
+            text-align: left;
+        }
+
+        .hero .text-container h1 {
             font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
         }
 
-        header p {
+        .hero .text-container p {
             font-size: 1.3rem;
             margin-bottom: 1.5rem;
             font-weight: 300;
         }
 
-        header nav a {
-            margin: 0 15px;
-            font-size: 1.2rem;
+        .hero .text-container a {
+            padding: 0.8rem 2rem;
+            background: #ffdd57;
+            color: #111;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
         }
 
-        /* About Me Section */
+        .hero .text-container a:hover {
+            background: #fff;
+            color: #111;
+        }
+
+        /* Image container */
+        .hero .image-container img {
+            width: 350px; /* Set a fixed width */
+            height: 350px; /* Set a fixed height to make it a square */
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+            border-radius: 10px; /* Optional: gives a slight rounded corner */
+        }
+
+        /* About Section */
         #about {
             padding: 4rem 2rem;
-            background: #fff;
             text-align: center;
-            margin-top: -60px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            background: #222;
         }
 
         #about h2 {
             font-size: 2.5rem;
-            color: #333;
             margin-bottom: 1rem;
         }
 
         #about p {
             font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 1.5rem;
             max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
         }
 
         /* Skills Section */
         #skills {
             padding: 4rem 2rem;
-            background: #f7f7f7;
             text-align: center;
+            background: #111;
         }
 
         .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            display: flex;
+            justify-content: center;
             gap: 2rem;
         }
 
         .skill-card {
-            background: #fff;
+            background: #222;
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .skill-card:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
         }
 
         .skill-card h3 {
             font-size: 1.6rem;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
         }
 
         .skill-card p {
             font-size: 1rem;
-            color: #666;
+            color: #bbb;
         }
 
         /* Projects Section */
         #projects {
             padding: 4rem 2rem;
-            background: #fff;
+            background: #222;
             text-align: center;
         }
 
@@ -172,65 +201,39 @@
         }
 
         .project-card {
-            background: #f9f9f9;
+            background: #333;
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .project-card:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
         }
 
         .project-card h3 {
             font-size: 1.6rem;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
         }
 
         .project-card p {
             font-size: 1rem;
-            color: #666;
+            color: #bbb;
         }
 
-        /* Contact Section */
-        #contact {
-            padding: 4rem 2rem;
-            background: #f7f7f7;
-            text-align: center;
+        /* Remove color from links and add hover effect */
+        .project-card a {
+            color: inherit; /* Ensures link inherits color from parent */
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.3s ease;
         }
 
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 1rem;
-            margin: 0.5rem 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 1rem;
-        }
-
-        .contact-form button {
-            background: #1e1e2f;
-            color: #fff;
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            border: none;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .contact-form button:hover {
-            background: #ffdd57;
-            color: #1e1e2f;
+        .project-card a:hover {
+            color: #ffdd57; /* Highlight on hover like in your skill cards */
         }
 
         /* Footer Section */
@@ -239,18 +242,22 @@
             color: #fff;
             padding: 2rem;
             text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
 
         footer .social-links a {
             color: #fff;
             margin: 0 15px;
-            font-size: 1.8rem;
+            font-size: 2rem;
             transition: color 0.3s ease;
         }
 
         footer .social-links a:hover {
             color: #ffdd57;
         }
+
     </style>
 </head>
 
@@ -260,84 +267,86 @@
     <nav>
         <h1>Prashanna Chand</h1>
         <div>
-            <a href="#about">About Me</a>
+            <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="contact.html">Contact</a>
         </div>
     </nav>
 
-    <!-- Header Section with Background Image -->
-    <header>
-        <img src="brp.jpg" alt="Profile Picture">
-        <h1>Prashanna Chand</h1>
-        <p>Machine learning enthusiast | Aspiring Developer</p>
-    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="text-container">
+                    <h1> Hi! I am Prashanna Chand</h1>
+                    <p>Machine Learning Enthusiast | Aspiring Developer</p>
+                    <p>Currently learning advanced concepts and excited to work on real-world projects.</p>
+                    <a href="contact.html">Get In Touch</a>
+                </div>
+                <div class="image-container">
+                    <img src="pp.jpg" alt="Prashanna Chand's Photo">
+                </div>
+            </div>
+        </section>
 
-    <!-- About Me Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello, I am Prashanna Chand, a 20-year-old Software Engineering student with a passion for the world of technology and coding. I am highly interested in Machine Learning, Data Science, and developing innovative solutions to complex problems.</p>
-        <p>I am currently learning advanced concepts in Machine Learning and Data Science, and I am open to work opportunities that will allow me to apply and grow my skills in real-world projects.</p>
-    </section>
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hi, I'm Prashanna, a passionate software engineer with a keen interest in machine learning, data science, and innovative solutions. Over the years, I have honed my skills in developing efficient software applications and building intelligent systems that solve real-world problems. I believe in the power of technology to drive positive change, and I am committed to continually learning and growing in this fast-evolving field. </p>
+            <p>Currently, I am diving deeper into advanced concepts such as deep learning, natural language processing, and big data technologies. I love working on challenging projects that involve data analysis and machine learning algorithms, and I enjoy transforming data into actionable insights. I am excited to collaborate with like-minded professionals and contribute to cutting-edge projects that push the boundaries of what's possible.</p>
+            <p>Aside from my technical skills, I am a firm believer in the importance of teamwork and communication in achieving great outcomes. Whether working on individual projects or collaborating with cross-functional teams, I strive to bring creativity, problem-solving, and a continuous learning mindset to every task I take on. Let's connect and explore how we can make an impact together!</p>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-container">
-            <div class="skill-card">
-                <h3>HTML & CSS</h3>
-                <p>Proficient in creating responsive designs and modern layouts.</p>
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <h3>HTML & CSS</h3>
+                    <p>Proficient in creating responsive, clean web designs.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>JavaScript</h3>
+                    <p>Skilled in building interactive web applications.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Python</h3>
+                    <p>Experienced with machine learning and data science projects.</p>
+                </div>
             </div>
-            <div class="skill-card">
-                <h3>JavaScript</h3>
-                <p>Experience with dynamic web applications.</p>
-            </div>
-            <div class="skill-card">
-                <h3>Python</h3>
-                <p>Familiar with automation, scripting, data handling, and analysis.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects-container">
-            <div class="project-card">
-                <h3>Portfolio Website</h3>
-                <p>A personal portfolio showcasing my skills and projects.</p>
-                <a href="https://github.com/prashannaChand" target="_blank">View on GitHub</a>
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <a href="https://github.com/prashannaChand/portfolio" target="_blank">
+                        <h3>Portfolio Website</h3>
+                    </a>
+                    <p>A sleek portfolio website showcasing my skills and projects.</p>
+                </div>
+                <div class="project-card">
+                    <a href="https://github.com/prashannaChand/JAVA_SERVLET_DEMO" target="_blank">
+                        <h3>Library Management system</h3>
+                    </a>
+                    <p>A Java app to manage a library system.</p>
+                </div>
             </div>
-            <div class="project-card">
-                <h3>Library Management System</h3>
-                <p>A Java app to manage a library system.</p>
-                <a href="https://github.com/prashannaChand" target="_blank">View on GitHub</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form class="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+    </main>
 
     <!-- Footer Section -->
-    <!-- Footer Section -->
-<footer>
-    <div class="social-links">
-        <a href="https://github.com/prashannaChand" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/prashanna-chand/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.facebook.com/prashanna.chand" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/prashanna_chand/" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
-</footer>
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/prashannaChand" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/prashanna-chand/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/prashanna.chand" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/prashanna_chand/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
 
 </body>
 
