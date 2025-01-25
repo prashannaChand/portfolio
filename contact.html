@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Page | Prashanna Chand">
+    <meta name="author" content="Prashanna Chand">
+    <title>Contact | Prashanna Chand</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #111;
+            color: #fff;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+            padding: 4rem 2rem;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .home-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2rem;
+            color: #ffdd57;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .home-icon:hover {
+            color: #fff;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            flex: 1;
+            background: #222;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info .icon {
+            margin-right: 10px;
+        }
+
+        .contact-form {
+            flex: 1;
+            background: #222;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: #333;
+            color: #fff;
+            border: 1px solid #444;
+            border-radius: 5px;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            padding: 1rem 2rem;
+            background: #ffdd57;
+            border: none;
+            color: #111;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background: #fff;
+            color: #111;
+        }
+
+        .download-cv {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .download-cv a {
+            background: #ffdd57;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            color: #111;
+            transition: background 0.3s ease;
+        }
+
+        .download-cv a:hover {
+            background: #fff;
+            color: #111;
+        }
+
+        footer {
+            background: #111;
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer .social-links a {
+            color: #fff;
+            margin: 0 15px;
+            font-size: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-links a:hover {
+            color: #ffdd57;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Home Icon Link -->
+    <a href="delete.html" class="home-icon">
+        <i class="fas fa-home"></i>
+    </a>
+
+    <main>
+        <h2>Contact Me</h2>
+
+        <div class="contact-container">
+            <!-- Contact Information Section -->
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p><i class="fas fa-map-marker-alt icon"></i><strong>Location:</strong> Kathmandu, Nepal</p>
+                <p><i class="fas fa-envelope icon"></i><strong>Email:</strong> chandprashanna99@gmail.com</p>
+                <p><i class="fas fa-graduation-cap icon"></i><strong>Education:</strong> NCIT, Kathmandu</p>
+                <p><i class="fas fa-phone-alt icon"></i><strong>Mobile Number:</strong> 9846250978</p>
+                <p><i class="fas fa-language icon"></i><strong>Languages:</strong> Nepali, English, Hindi, Doteli</p>
+            </div>
+
+            <!-- Contact Form Section -->
+            <div class="contact-form">
+                <h3>Get In Touch</h3>
+                <!-- Update form action to point to PHP file -->
+                <form action="contact.php" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="subject" placeholder="Enter Subject" required>
+                    <textarea name="message" placeholder="Message Here..." required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Download CV Section -->
+        <div class="download-cv">
+            <a href="Babu.pdf" download>Download CV</a>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/prashannaChand" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/prashanna-chand/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/prashanna.chand" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/prashanna_chand/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
