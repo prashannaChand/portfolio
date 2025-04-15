@@ -10,7 +10,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -30,14 +30,13 @@
             scroll-behavior: smooth;
             min-height: 100vh;
             display: flex;
-            flex-direction: column;  /* Arrange sections in column layout */
+            flex-direction: column;
         }
 
         main {
-            flex: 1; /* Ensures the footer is at the bottom */
+            flex: 1;
         }
 
-        /* Navbar Styling */
         nav {
             position: fixed;
             top: 0;
@@ -69,10 +68,9 @@
             color: #ffdd57;
         }
 
-        /* Hero Section */
         .hero {
             height: 100vh;
-            background:#2F4F4F;  /* Solid color background for the hero section */
+            background: #2F4F4F;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -80,7 +78,6 @@
             padding: 0 2rem;
         }
 
-        /* Flex container for text and image */
         .hero .hero-content {
             display: flex;
             justify-content: space-between;
@@ -90,7 +87,6 @@
             gap: 2rem;
         }
 
-        /* Text container */
         .hero .text-container {
             max-width: 50%;
             text-align: left;
@@ -123,15 +119,13 @@
             color: #111;
         }
 
-        /* Image container */
         .hero .image-container img {
-            width: 480px; /* Set a fixed width */
-            height: 480px; /* Set a fixed height to make it a square */
-            object-fit: cover; /* Ensures the image covers the area without distortion */
-            border-radius: 10px; /* Optional: gives a slight rounded corner */
+            width: 480px;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 10px;
         }
 
-        /* About Section */
         #about {
             padding: 4rem 2rem;
             text-align: center;
@@ -146,10 +140,9 @@
         #about p {
             font-size: 1.1rem;
             max-width: 800px;
-            margin: 0 auto;
+            margin: 0 auto 1rem;
         }
 
-        /* Skills Section */
         #skills {
             padding: 4rem 2rem;
             text-align: center;
@@ -187,7 +180,6 @@
             color: #bbb;
         }
 
-        /* Projects Section */
         #projects {
             padding: 4rem 2rem;
             background: #222;
@@ -224,19 +216,17 @@
             color: #bbb;
         }
 
-        /* Remove color from links and add hover effect */
         .project-card a {
-            color: inherit; /* Ensures link inherits color from parent */
+            color: inherit;
             text-decoration: none;
             display: inline-block;
             transition: color 0.3s ease;
         }
 
         .project-card a:hover {
-            color: #ffdd57; /* Highlight on hover like in your skill cards */
+            color: #ffdd57;
         }
 
-        /* Footer Section */
         footer {
             background: #111;
             color: #fff;
@@ -258,6 +248,61 @@
             color: #ffdd57;
         }
 
+        /* ================================
+           RESPONSIVE STYLES FOR MOBILE
+        ================================= */
+        @media (max-width: 768px) {
+            .hero .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero .text-container,
+            .hero .image-container {
+                max-width: 100%;
+            }
+
+            .hero .image-container img {
+                width: 80%;
+                height: auto;
+            }
+
+            .skills-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav div {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 0.5rem;
+            }
+
+            nav a {
+                margin: 0.5rem 0.5rem 0 0;
+            }
+
+            html {
+                font-size: 14px;
+            }
+
+            nav h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero .text-container h1 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 
@@ -283,9 +328,11 @@
                     <p>Machine Learning Enthusiast | Aspiring Developer</p>
                     <p>Currently learning advanced concepts and excited to work on real-world projects.</p>
                     <br>
-                     <p class="open-to-work">
-                    I'm always open to exciting projects, collaborations, and new opportunities! Whether you're a fellow developer, recruiter, or business owner looking to build something amazing, feel free to reach out:
-                </p>
+                    <p class="open-to-work">
+                        I'm always open to exciting projects, collaborations, and new opportunities! Whether you're a
+                        fellow developer, recruiter, or business owner looking to build something amazing, feel free to
+                        reach out:
+                    </p>
                     <br>
                     <a href="contact.html">Get In Touch</a>
                 </div>
@@ -298,9 +345,20 @@
         <!-- About Section -->
         <section id="about">
             <h2>About Me</h2>
-            <p>Hi, I'm Prashanna, a passionate software engineer with a keen interest in machine learning, data science, and innovative solutions. Over the years, I have honed my skills in developing efficient software applications and building intelligent systems that solve real-world problems. I believe in the power of technology to drive positive change, and I am committed to continually learning and growing in this fast-evolving field. </p>
-            <p>Currently, I am diving deeper into advanced concepts such as deep learning, natural language processing, and big data technologies. I love working on challenging projects that involve data analysis and machine learning algorithms, and I enjoy transforming data into actionable insights. I am excited to collaborate with like-minded professionals and contribute to cutting-edge projects that push the boundaries of what's possible.</p>
-            <p>Aside from my technical skills, I am a firm believer in the importance of teamwork and communication in achieving great outcomes. Whether working on individual projects or collaborating with cross-functional teams, I strive to bring creativity, problem-solving, and a continuous learning mindset to every task I take on. Let's connect and explore how we can make an impact together!</p>
+            <p>Hi, I'm Prashanna, a passionate software engineer with a keen interest in machine learning, data
+                science, and innovative solutions. Over the years, I have honed my skills in developing efficient
+                software applications and building intelligent systems that solve real-world problems. I believe in the
+                power of technology to drive positive change, and I am committed to continually learning and growing in
+                this fast-evolving field. </p>
+            <p>Currently, I am diving deeper into advanced concepts such as deep learning, natural language processing,
+                and big data technologies. I love working on challenging projects that involve data analysis and machine
+                learning algorithms, and I enjoy transforming data into actionable insights. I am excited to collaborate
+                with like-minded professionals and contribute to cutting-edge projects that push the boundaries of
+                what's possible.</p>
+            <p>Aside from my technical skills, I am a firm believer in the importance of teamwork and communication in
+                achieving great outcomes. Whether working on individual projects or collaborating with cross-functional
+                teams, I strive to bring creativity, problem-solving, and a continuous learning mindset to every task I
+                take on. Let's connect and explore how we can make an impact together!</p>
         </section>
 
         <!-- Skills Section -->
@@ -340,14 +398,14 @@
                 </div>
             </div>
         </section>
-
     </main>
 
     <!-- Footer Section -->
     <footer>
         <div class="social-links">
             <a href="https://github.com/prashannaChand" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/prashanna-chand-96a797304" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/prashanna-chand-96a797304" target="_blank"><i
+                    class="fab fa-linkedin"></i></a>
             <a href="https://www.facebook.com/prashanna.chand" target="_blank"><i class="fab fa-facebook"></i></a>
             <a href="https://www.instagram.com/prashanna_chand/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
