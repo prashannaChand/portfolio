@@ -535,7 +535,8 @@
         // Theme toggle logic
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
-        const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        // Default theme is dark unless user has explicitly chosen light
+        let isLight = localStorage.getItem('theme') === 'light';
 
         function setTheme(light) {
             if (light) {
@@ -547,8 +548,6 @@
             }
         }
 
-        // Load theme from localStorage or system preference
-        let isLight = localStorage.getItem('theme') === 'light' || (localStorage.getItem('theme') === null && prefersLight);
         setTheme(isLight);
 
         themeToggle.addEventListener('click', () => {
