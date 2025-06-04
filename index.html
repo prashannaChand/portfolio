@@ -469,6 +469,26 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .action-btn {
+            padding: 0.8rem 2rem;
+            background: #ffdd57;
+            color: #111;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border: 2px solid #ffdd57;
+            margin-top: 1rem;
+            display: inline-block;
+            transition: background 0.3s, color 0.3s, border 0.3s;
+        }
+
+        .action-btn:hover {
+            background: #fff;
+            color: #111;
+            border: 2px solid #ffdd57;
+        }
     </style>
 </head>
 <body>
@@ -499,7 +519,8 @@
                         reach out:
                     </p>
                     <br>
-                    <a href="contact.html">Get In Touch</a>
+                    <a href="contact.html" class="action-btn">Get In Touch</a>
+                    <a href="PC_CV.docx" download class="action-btn" style="margin-left: 1rem;">Download CV</a>
                 </div>
                 <div class="image-container">
                     <img src="pp.jpg" alt="Prashanna Chand's Photo">
