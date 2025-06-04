@@ -436,6 +436,39 @@
             background: #1a73e8;
             color: #fff;
         }
+
+        .projects-container.four-projects {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projects-container.three-projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 1200px) {
+            .projects-container.four-projects {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-container.three-projects {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .projects-container.four-projects,
+            .projects-container.three-projects {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -476,12 +509,7 @@
 
         <section id="about">
             <h2>About Me</h2>
-            <p>Hi, I'm Prashanna, a passionate software engineer with a strong focus on machine learning, web development, and backend engineering. I specialize in building intelligent systems that solve real-world problems and creating seamless web experiences with scalable backend infrastructures. From crafting responsive user interfaces to designing robust server-side architectures, I strive to deliver solutions that are both efficient and impactful. </p>
-            <p>My current journey is centered around advancing my knowledge in areas like deep learning, natural language processing, and various backend technologies. I enjoy developing data-driven applications, integrating APIs, and deploying end-to-end machine learning models in real-time environments. My work blends analytical thinking with practical coding skills to build systems that not only function well—but also learn and adapt.</p>
-            <p>Aside from my technical skills, I am a firm believer in the importance of teamwork and communication in
-                achieving great outcomes. Whether working on individual projects or collaborating with cross-functional
-                teams, I strive to bring creativity, problem-solving, and a continuous learning mindset to every task I
-                take on. Let's connect and explore how we can make an impact together!</p>
+           <p>Hi, I'm Prashanna—a software engineer passionate about machine learning, web development, and backend systems. I build intelligent, data-driven applications with clean UIs and scalable infrastructures.</p> <p>I'm currently deepening my skills in deep learning, NLP, and backend tech, focusing on real-time ML deployment and API integration. I enjoy blending analysis with code to create adaptive, high-impact solutions.</p> <p>Beyond coding, I value teamwork, communication, and a mindset of continuous learning. Let's connect and build something meaningful together!</p>
         </section>
 
         <section id="skills">
@@ -512,10 +540,11 @@
 
         <section id="projects">
             <h2>Projects</h2>
-            <div class="projects-container">
+            <!-- First project section: 4 cards in one row -->
+            <div class="projects-container four-projects">
                 <div class="project-card">
                     <div class="project-preview">
-                        <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg" alt="Portfolio Website Preview">
+                        <img src="portfolio.png" alt="Portfolio Website Preview">
                     </div>
                     <div class="project-info">
                         <h3>Portfolio Website</h3>
@@ -541,7 +570,7 @@
 
                 <div class="project-card">
                     <div class="project-preview">
-                        <img src="https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg" alt="Sign Language Detection Preview">
+                        <img src="signlanguage.png" alt="Sign Language Detection Preview">
                     </div>
                     <div class="project-info">
                         <h3>Sign Language Detection</h3>
@@ -554,7 +583,7 @@
 
                 <div class="project-card">
                     <div class="project-preview">
-                        <img src="https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg" alt="Cat-Dog Categorization Preview">
+                        <img src="catdog.png" alt="Cat-Dog Categorization Preview">
                     </div>
                     <div class="project-info">
                         <h3>Cat-Dog Categorization</h3>
@@ -564,10 +593,13 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <!-- Second project section: 3 cards in one row -->
+            <div class="projects-container three-projects" style="margin-top: 3rem;">
                 <div class="project-card">
                     <div class="project-preview">
-                        <img src="https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg" alt="WardrobeMirror Preview">
+                        <img src="wardrobemirror.png" alt="WardrobeMirror Preview">
                     </div>
                     <div class="project-info">
                         <h3>WardrobeMirror</h3>
@@ -580,13 +612,25 @@
 
                 <div class="project-card">
                     <div class="project-preview">
-                        <img src="https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg" alt="NCITkhabar Preview">
+                        <img src="ncitkhabar.png" alt="NCITkhabar Preview">
                     </div>
                     <div class="project-info">
                         <h3>NCITkhabar</h3>
                         <p>A news deployment app using HTML, CSS, and JavaScript.</p>
                         <div class="project-links">
                             <a href="https://NCITkhabar.netlify.app" class="live-link" target="_blank">View Live</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-preview">
+                        <img src="food.png" alt="mero CHULO Preview">
+                    </div>
+                    <div class="project-info">
+                        <h3>Mero CHULO</h3>
+                        <p>Django-based recipe web app that lets users register, log in, and explore delicious recipes.</p>
+                        <div class="project-links">
+                            <a href="https://mero-chulo-1.onrender.com/" class="live-link" target="_blank">View Live</a>
                         </div>
                     </div>
                 </div>
