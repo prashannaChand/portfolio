@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,13 +48,13 @@
             justify-content: space-between;
             align-items: center;
             z-index: 100;
-            backdrop-filter: blur(12px); /* Stronger blur for aesthetic effect */
-            -webkit-backdrop-filter: blur(12px); /* Safari support */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255,255,255,0.07);
         }
 
         nav h1 {
-            font-size: 1.05rem; /* Even smaller name */
+            font-size: 1.05rem;
             font-weight: bold;
             letter-spacing: 1px;
             transition: color 0.3s;
@@ -193,43 +192,80 @@
 
         .projects-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .project-card {
             background: #333;
-            padding: 2rem;
-            border-radius: 8px;
-            text-align: center;
+            border-radius: 12px;
+            overflow: hidden;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-preview {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover .project-preview img {
             transform: scale(1.05);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-info {
+            padding: 1.5rem;
         }
 
         .project-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #ffdd57;
         }
 
         .project-card p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #bbb;
+            margin-bottom: 1rem;
         }
 
-        .project-card a {
-            color: inherit;
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .project-links a {
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
             text-decoration: none;
-            display: inline-block;
-            transition: color 0.3s ease;
+            font-size: 0.9rem;
+            transition: all 0.3s;
         }
 
-        .project-card a:hover {
-            color: #ffdd57;
+        .project-links .live-link {
+            background: #ffdd57;
+            color: #333;
+        }
+
+        .project-links .live-link:hover {
+            background: #fff;
         }
 
         footer {
@@ -253,9 +289,6 @@
             color: #ffdd57;
         }
 
-        /* ================================
-           RESPONSIVE STYLES FOR MOBILE
-        ================================= */
         @media (max-width: 768px) {
             .hero .hero-content {
                 flex-direction: column;
@@ -302,7 +335,7 @@
             }
 
             nav h1 {
-                font-size: 1rem; /* Even smaller on mobile */
+                font-size: 1rem;
             }
 
             .hero .text-container h1 {
@@ -326,6 +359,7 @@
             gap: 0.5rem;
             transition: background 0.3s, color 0.3s;
         }
+
         .theme-toggle-btn:hover {
             background: #ffdd57;
             color: #111;
@@ -335,64 +369,76 @@
             background-color: #f7f7f7;
             color: #222;
         }
+
         body.light-theme nav {
             background: rgba(255,255,255,0.85);
             color: #222;
             border-bottom: 1px solid #e0e0e0;
         }
+
         body.light-theme nav a {
             color: #222;
         }
+
         body.light-theme nav a:hover {
             color: #1a73e8;
         }
+
         body.light-theme nav h1 {
             color: #1a73e8;
         }
+
         body.light-theme .hero {
             background: #e9ecef;
             color: #222;
         }
+
         body.light-theme #about {
             background: #fff;
             color: #222;
         }
+
         body.light-theme #skills {
             background: #f7f7f7;
             color: #222;
         }
+
         body.light-theme #projects {
             background: #fff;
             color: #222;
         }
+
         body.light-theme .skill-card {
             background: #f1f3f4;
             color: #222;
         }
+
         body.light-theme .project-card {
             background: #f1f3f4;
             color: #222;
         }
+
         body.light-theme footer {
             background: #fff;
             color: #222;
         }
+
         body.light-theme footer .social-links a {
             color: #222;
         }
+
         body.light-theme .theme-toggle-btn {
             background: rgba(0,0,0,0.08);
             color: #1a73e8;
         }
+
         body.light-theme .theme-toggle-btn:hover {
             background: #1a73e8;
             color: #fff;
         }
     </style>
 </head>
-
 <body>
-    <!-- Navbar -->
     <nav>
         <h1>PRASHANNA CHAND</h1>
         <div style="display: flex; align-items: center;">
@@ -407,7 +453,6 @@
     </nav>
 
     <main>
-        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
                 <div class="text-container">
@@ -429,7 +474,6 @@
             </div>
         </section>
 
-        <!-- About Section -->
         <section id="about">
             <h2>About Me</h2>
             <p>Hi, I'm Prashanna, a passionate software engineer with a strong focus on machine learning, web development, and backend engineering. I specialize in building intelligent systems that solve real-world problems and creating seamless web experiences with scalable backend infrastructures. From crafting responsive user interfaces to designing robust server-side architectures, I strive to deliver solutions that are both efficient and impactful. </p>
@@ -440,112 +484,128 @@
                 take on. Let's connect and explore how we can make an impact together!</p>
         </section>
 
-        <!-- Languages Section -->
-<section id="skills">
-    <h2>Languages</h2>
-    <div class="skills-container">
-        <div class="skill-card">
-            <h3>HTML & CSS</h3>
-            <p>Proficient in creating responsive, clean web designs.</p>
-        </div>
-        <div class="skill-card">
-            <h3>JavaScript</h3>
-            <p>Skilled in building interactive web applications.</p>
-        </div>
-        <div class="skill-card">
-            <h3>Python</h3>
-            <p>Experienced with machine learning and data science projects.</p>
-        </div>
-        <div class="skill-card">
-            <h3>C/C++</h3>
-            <p>Strong foundation in algorithms and system-level programming.</p>
-        </div>
-        <div class="skill-card">
-            <h3>Java</h3>
-            <p>Capable of building scalable applications and backend systems.</p>
-        </div>
-    </div>
-</section>
+        <section id="skills">
+            <h2>Languages</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <h3>HTML & CSS</h3>
+                    <p>Proficient in creating responsive, clean web designs.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>JavaScript</h3>
+                    <p>Skilled in building interactive web applications.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Python</h3>
+                    <p>Experienced with machine learning and data science projects.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>C/C++</h3>
+                    <p>Strong foundation in algorithms and system-level programming.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Java</h3>
+                    <p>Capable of building scalable applications and backend systems.</p>
+                </div>
+            </div>
+        </section>
 
-
-        <!-- Projects Section -->
         <section id="projects">
-    <h2>View Live Projects</h2>
-    
-    <!-- First row (3 projects) -->
-    <div class="projects-container">
-        <div class="project-card">
-            <a href="https://prashannachand.com.np/" target="_blank">
-                <h3>Portfolio Website</h3>
-            </a>
-            <p>A sleek portfolio website showcasing my skills and projects.</p>
-        </div>
-        <div class="project-card">
-            <a href="https://https://pclibrarymanagement.netlify.app/" target="_blank">
-                <h3>Library Management System</h3>
-            </a>
-            <p>A Java app to manage a library system.</p>
-        </div>
-        <div class="project-card">
-            <a href="https://github.com/prashannaChand/SignLanguageDetection" target="_blank">
-                <h3>SignLanguageDetection</h3>
-            </a>
-            <p>A Python-powered system for recognizing and classifying alphabets in sign language using image processing techniques.</p>
-        </div>
-    </div>
-<br>
-    <!-- Second row (2 projects) -->
-    <div class="projects-container">
-        <div class="project-card">
-            <a href="https://pcanimal.netlify.app/" target="_blank">
-                <h3>Cat-Dog Categorization</h3>
-            </a>
-            <p>A Python-based image recognition system that classifies input images as either a cat or a dog.</p>
-        </div>
-        <div class="project-card">
-            <a href="https://WardrobeMirror.netlify.app" target="_blank">
-                <h3>WardrobeMirror</h3>
-            </a>
-            <p>A fashion recommendation system made using Deep Learning and Machine Learning.</p>
-        </div>
-        <div class="project-card">
-            <a href="https://NCITkhabar.netlify.app" target="_blank">
-                <h3>NCITkhabar</h3>
-            </a>
-            <p>A basic news deploying app using basic HTML,css,PHP ahd javascript</p>
-        </div>
-    </div>
-            <br>
-              <div class="projects-container">
-        <div class="project-card">
-            <a href="https://mero-chulo-1.onrender.com/" target="_blank">
-                <h3>Mero-CHULO</h3>
-            </a>
-            <p>A Python-based web application where users can add, edit, and view delicious recipes in a warm and user-friendly interface..</p>
-        </div>
-              </div>
-            
-</section>
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-preview">
+                        <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg" alt="Portfolio Website Preview">
+                    </div>
+                    <div class="project-info">
+                        <h3>Portfolio Website</h3>
+                        <p>A sleek portfolio website showcasing my skills and projects.</p>
+                        <div class="project-links">
+                            <a href="https://prashannachand.com.np/" class="live-link" target="_blank">View Live</a>
+                        </div>
+                    </div>
+                </div>
 
-        
+                <div class="project-card">
+                    <div class="project-preview">
+                        <img src="https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg" alt="Library Management System Preview">
+                    </div>
+                    <div class="project-info">
+                        <h3>Library Management System</h3>
+                        <p>A Java app to manage a library system.</p>
+                        <div class="project-links">
+                            <a href="https://pclibrarymanagement.netlify.app/" class="live-link" target="_blank">View Live</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-preview">
+                        <img src="https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg" alt="Sign Language Detection Preview">
+                    </div>
+                    <div class="project-info">
+                        <h3>Sign Language Detection</h3>
+                        <p>A Python-powered system for recognizing and classifying alphabets in sign language.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/prashannaChand/SignLanguageDetection" class="live-link" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-preview">
+                        <img src="https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg" alt="Cat-Dog Categorization Preview">
+                    </div>
+                    <div class="project-info">
+                        <h3>Cat-Dog Categorization</h3>
+                        <p>A Python-based image recognition system for classifying cats and dogs.</p>
+                        <div class="project-links">
+                            <a href="https://pcanimal.netlify.app/" class="live-link" target="_blank">View Live</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-preview">
+                        <img src="https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg" alt="WardrobeMirror Preview">
+                    </div>
+                    <div class="project-info">
+                        <h3>WardrobeMirror</h3>
+                        <p>A fashion recommendation system using Deep Learning and Machine Learning.</p>
+                        <div class="project-links">
+                            <a href="https://WardrobeMirror.netlify.app" class="live-link" target="_blank">View Live</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-preview">
+                        <img src="https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg" alt="NCITkhabar Preview">
+                    </div>
+                    <div class="project-info">
+                        <h3>NCITkhabar</h3>
+                        <p>A news deployment app using HTML, CSS, and JavaScript.</p>
+                        <div class="project-links">
+                            <a href="https://NCITkhabar.netlify.app" class="live-link" target="_blank">View Live</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer Section -->
     <footer>
         <div class="social-links">
             <a href="https://github.com/prashannaChand" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/prashanna-chand-96a797304" target="_blank"><i
-                    class="fab fa-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/prashanna-chand-96a797304" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.facebook.com/prashanna.chand" target="_blank"><i class="fab fa-facebook"></i></a>
             <a href="https://www.instagram.com/prashanna_chand/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
     </footer>
 
     <script>
-        // Theme toggle logic
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
-        // Default theme is dark unless user has explicitly chosen light
         let isLight = localStorage.getItem('theme') === 'light';
 
         function setTheme(light) {
@@ -567,5 +627,4 @@
         });
     </script>
 </body>
-
 </html>
