@@ -3,693 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Prashanna Chand | Portfolio">
-    <meta name="author" content="Prashanna Chand">
-    <title>Prashanna Chand | Portfolio</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!-- Custom CSS -->
+    <title>Prashanna Chand - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #111;
-            color: #fff;
-            line-height: 1.6;
-            scroll-behavior: smooth;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            font-family: 'Inter', sans-serif;
         }
-
-        main {
-            flex: 1;
-        }
-
-        nav {
+        .bg-wave {
             position: fixed;
             top: 0;
             left: 0;
-            right: 0;
-            background: rgba(17, 17, 17, 0.7);
-            color: #fff;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,255,255,0.07);
-        }
-
-        nav h1 {
-            font-size: 1.05rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-
-        nav a {
-            color: #fff;
-            font-size: 1.2rem;
-            margin: 0 1rem;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #ffdd57;
-        }
-
-        .hero {
-            height: 100vh;
-            background: #2F4F4F;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            padding: 0 2rem;
-        }
-
-        .hero .hero-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            max-width: 1200px;
-            gap: 2rem;
-        }
-
-        .hero .text-container {
-            max-width: 50%;
-            text-align: left;
-        }
-
-        .hero .text-container h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        .hero .text-container p {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-        }
-
-        .hero .text-container a {
-            padding: 0.8rem 2rem;
-            background: #ffdd57;
-            color: #111;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: background 0.3s ease;
-        }
-
-        .hero .text-container a:hover {
-            background: #fff;
-            color: #111;
-        }
-
-        .hero .image-container img {
-            width: 480px;
-            height: 480px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        #about {
-            padding: 4rem 2rem;
-            text-align: center;
-            background: #222;
-        }
-
-        #about h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        #about p {
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto 1rem;
-        }
-
-        #skills {
-            padding: 4rem 2rem;
-            text-align: center;
-            background: #111;
-        }
-
-        .skills-container {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .skill-card {
-            background: #222;
-            padding: 2rem;
-            border-radius: 8px;
-            width: 200px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .skill-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .skill-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-        }
-
-        .skill-card p {
-            font-size: 1rem;
-            color: #bbb;
-        }
-
-        #projects {
-            padding: 4rem 2rem;
-            background: #222;
-            text-align: center;
-        }
-
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .project-card {
-            background: #333;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .project-preview {
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .project-preview img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
+            background: linear-gradient(45deg, #0d9488, #f43f5e, #6b7280);
+            background-size: 400%;
+            animation: wave 15s ease infinite;
+            z-index: -1;
         }
-
-        .project-card:hover .project-preview img {
-            transform: scale(1.05);
+        @keyframes wave {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
-
-        .project-info {
-            padding: 1.5rem;
-        }
-
-        .project-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-            color: #ffdd57;
-        }
-
-        .project-card p {
-            font-size: 0.95rem;
-            color: #bbb;
-            margin-bottom: 1rem;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-        }
-
-        .project-links a {
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-        }
-
-        .project-links .live-link {
-            background: #ffdd57;
-            color: #333;
-        }
-
-        .project-links .live-link:hover {
-            background: #fff;
-        }
-
-        footer {
-            background: #111;
-            color: #fff;
-            padding: 2rem;
-            text-align: center;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        footer .social-links a {
-            color: #fff;
-            margin: 0 15px;
-            font-size: 2rem;
-            transition: color 0.3s ease;
-        }
-
-        footer .social-links a:hover {
-            color: #ffdd57;
-        }
-
-        @media (max-width: 768px) {
-            .hero .hero-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .hero .text-container,
-            .hero .image-container {
-                max-width: 100%;
-            }
-
-            .hero .image-container img {
-                width: 80%;
-                height: auto;
-            }
-
-            .skills-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .projects-container {
-                grid-template-columns: 1fr;
-            }
-
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 0.7rem 1rem;
-            }
-
-            nav div {
-                display: flex;
-                flex-wrap: wrap;
-                margin-top: 0.5rem;
-            }
-
-            nav a {
-                margin: 0.5rem 0.5rem 0 0;
-            }
-
-            html {
-                font-size: 14px;
-            }
-
-            nav h1 {
-                font-size: 1rem;
-            }
-
-            .hero .text-container h1 {
-                font-size: 2rem;
-            }
-        }
-
-        .theme-toggle-btn {
-            background: rgba(255,255,255,0.12);
-            border: none;
-            outline: none;
-            border-radius: 50px;
-            padding: 0.45rem 1.1rem;
-            margin-left: 1.5rem;
-            color: #ffdd57;
-            font-size: 1.1rem;
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        .section {
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            transition: background 0.3s, color 0.3s;
+            justify-content: center;
+            padding: 4rem 1rem;
         }
-
-        .theme-toggle-btn:hover {
-            background: #ffdd57;
-            color: #111;
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-
-        body.light-theme {
-            background-color: #f7f7f7;
-            color: #222;
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
-
-        body.light-theme nav {
-            background: rgba(255,255,255,0.85);
-            color: #222;
-            border-bottom: 1px solid #e0e0e0;
+        .nav-link:hover {
+            color: #f9a8d4;
+            transform: scale(1.1);
+            transition: all 0.3s ease;
         }
-
-        body.light-theme nav a {
-            color: #222;
+        .hero .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-
-        body.light-theme nav a:hover {
-            color: #1a73e8;
+        .hero .image-container img {
+            width: 100%;
+            max-width: 480px;
+            height: 480px;
+            object-fit: cover;
+            border: 1px solid #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
         }
-
-        body.light-theme nav h1 {
-            color: #1a73e8;
-        }
-
-        body.light-theme .hero {
-            background: #e9ecef;
-            color: #222;
-        }
-
-        body.light-theme #about {
-            background: #fff;
-            color: #222;
-        }
-
-        body.light-theme #skills {
-            background: #f7f7f7;
-            color: #222;
-        }
-
-        body.light-theme #projects {
-            background: #fff;
-            color: #222;
-        }
-
-        body.light-theme .skill-card {
-            background: #f1f3f4;
-            color: #222;
-        }
-
-        body.light-theme .project-card {
-            background: #f1f3f4;
-            color: #222;
-        }
-
-        body.light-theme footer {
-            background: #fff;
-            color: #222;
-        }
-
-        body.light-theme footer .social-links a {
-            color: #222;
-        }
-
-        body.light-theme .theme-toggle-btn {
-            background: rgba(0,0,0,0.08);
-            color: #1a73e8;
-        }
-
-        body.light-theme .theme-toggle-btn:hover {
-            background: #1a73e8;
-            color: #fff;
-        }
-
-        .projects-container.four-projects {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .projects-container.three-projects {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 1200px) {
-            .projects-container.four-projects {
-                grid-template-columns: repeat(2, 1fr);
+        @media (max-width: 640px) {
+            .hero .image-container img {
+                height: 320px;
+                max-width: 100%;
             }
-
-            .projects-container.three-projects {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 900px) {
-            .projects-container.four-projects,
-            .projects-container.three-projects {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .action-btn {
-            padding: 0.8rem 2rem;
-            background: #ffdd57;
-            color: #111;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-            border: 2px solid #ffdd57;
-            margin-top: 1rem;
-            display: inline-block;
-            transition: background 0.3s, color 0.3s, border 0.3s;
-        }
-
-        .action-btn:hover {
-            background: #fff;
-            color: #111;
-            border: 2px solid #ffdd57;
         }
     </style>
 </head>
-<body>
-    <nav>
-        <h1>PRASHANNA CHAND</h1>
-        <div style="display: flex; align-items: center;">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="contact.html">Contact</a>
-            <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle theme" style="margin-left: 1rem;">
-                <span id="themeIcon">🌙</span>
-            </button>
+<body class="bg-gray-800 text-white">
+    <div class="bg-wave"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-teal-400">Prashanna Chand</h1>
+            <div class="space-x-8">
+                <a href="index.html" class="nav-link text-lg hover:text-teal-300 transition">Home</a>
+                <a href="#about" class="nav-link text-lg hover:text-teal-300 transition">About</a>
+                <a href="#skills" class="nav-link text-lg hover:text-teal-300 transition">Skills</a>
+                <a href="projects.html" class="nav-link text-lg hover:text-teal-300 transition">Projects</a>
+                <a href="contact.html" class="nav-link text-lg hover:text-teal-300 transition">Contact</a>
+        
+            </div>
         </div>
     </nav>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <div class="text-container">
-                    <h1> Hi! I am Prashanna Chand</h1>
-                    <p>Machine Learning Enthusiast | Aspiring Developer</p>
-                    <p>Currently learning advanced concepts and excited to work on real-world projects.</p>
-                    <br>
-                    <p class="open-to-work">
-                        I'm always open to exciting projects, collaborations, and new opportunities! Whether you're a
-                        fellow developer, recruiter, or business owner looking to build something amazing, feel free to
-                        reach out:
-                    </p>
-                    <br>
-                    <a href="contact.html" class="action-btn">Get In Touch</a>
-                    <a href="PC_CV.docx" download class="action-btn" style="margin-left: 1rem;">Download CV</a>
-                </div>
-                <div class="image-container">
-                    <img src="pp.jpg" alt="Prashanna Chand's Photo">
-                </div>
+    <!-- Home Section -->
+    <section id="home" class="section hero">
+        <div class="container mx-auto px-4 text-center fade-in">
+            <div class="image-container mx-auto mb-6">
+                <img src="pp.jpg" alt="Prashanna Chand">
             </div>
-        </section>
-
-        <section id="about">
-            <h2>About Me</h2>
-           <p>Hi, I'm Prashanna—a software engineer passionate about machine learning, web development, and backend systems. I build intelligent, data-driven applications with clean UIs and scalable infrastructures.</p> <p>I'm currently deepening my skills in deep learning, NLP, and backend tech, focusing on real-time ML deployment and API integration. I enjoy blending analysis with code to create adaptive, high-impact solutions.</p> <p>Beyond coding, I value teamwork, communication, and a mindset of continuous learning. Let's connect and build something meaningful together!</p>
-        </section>
-
-        <section id="skills">
-            <h2>Languages</h2>
-            <div class="skills-container">
-                <div class="skill-card">
-                    <h3>HTML & CSS</h3>
-                    <p>Proficient in creating responsive, clean web designs.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>JavaScript</h3>
-                    <p>Skilled in building interactive web applications.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Python</h3>
-                    <p>Experienced with machine learning and data science projects.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>C/C++</h3>
-                    <p>Strong foundation in algorithms and system-level programming.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Java</h3>
-                    <p>Capable of building scalable applications and backend systems.</p>
-                </div>
+            <h2 class="text-5xl font-bold mb-4 text-teal-200">Prashanna Chand</h2>
+            <p class="text-2xl mb-6">Backend developer | Django & AI Enthusiast</p>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">Building innovative solutions with a blend of code, data, and creativity. Let's create something impactful!</p>
+            <div class="flex justify-center space-x-4">
+                <a href="contact.html" class="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-full transition text-lg">Connect With Me</a>
+                <a href="Prashanna_CV.docx" class="bg-gray-700 hover:bg-gray-600 text-white px-8 py-3 rounded-full transition text-lg">Download CV</a>
             </div>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <!-- First project section: 4 cards in one row -->
-            <div class="projects-container four-projects">
-                <div class="project-card">
-                    <div class="project-preview">
-                        <img src="portfolio.png" alt="Portfolio Website Preview">
-                    </div>
-                    <div class="project-info">
-                        <h3>Portfolio Website</h3>
-                        <p>A sleek portfolio website showcasing my skills and projects.</p>
-                        <div class="project-links">
-                            <a href="https://prashannachand.com.np/" class="live-link" target="_blank">View Live</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-preview">
-                        <img src="https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg" alt="Library Management System Preview">
-                    </div>
-                    <div class="project-info">
-                        <h3>Library Management System</h3>
-                        <p>A Java app to manage a library system.</p>
-                        <div class="project-links">
-                            <a href="https://pclibrarymanagement.netlify.app/" class="live-link" target="_blank">View Live</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-preview">
-                        <img src="signlanguage.png" alt="Sign Language Detection Preview">
-                    </div>
-                    <div class="project-info">
-                        <h3>Sign Language Detection</h3>
-                        <p>A Python-powered system for recognizing and classifying alphabets in sign language.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/prashannaChand/SignLanguageDetection" class="live-link" target="_blank">View Project</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-preview">
-                        <img src="catdog.png" alt="Cat-Dog Categorization Preview">
-                    </div>
-                    <div class="project-info">
-                        <h3>Cat-Dog Categorization</h3>
-                        <p>A Python-based image recognition system for classifying cats and dogs.</p>
-                        <div class="project-links">
-                            <a href="https://pcanimal.netlify.app/" class="live-link" target="_blank">View Live</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Second project section: 3 cards in one row -->
-            <div class="projects-container three-projects" style="margin-top: 3rem;">
-                <div class="project-card">
-                    <div class="project-preview">
-                        <img src="wardrobemirror.png" alt="WardrobeMirror Preview">
-                    </div>
-                    <div class="project-info">
-                        <h3>WardrobeMirror</h3>
-                        <p>A fashion recommendation system using Deep Learning and Machine Learning.</p>
-                        <div class="project-links">
-                            <a href="https://WardrobeMirror.netlify.app" class="live-link" target="_blank">View Live</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-preview">
-                        <img src="ncitkhabar.png" alt="NCITkhabar Preview">
-                    </div>
-                    <div class="project-info">
-                        <h3>NCITkhabar</h3>
-                        <p>A news deployment app using HTML, CSS, and JavaScript.</p>
-                        <div class="project-links">
-                            <a href="https://NCITkhabar.netlify.app" class="live-link" target="_blank">View Live</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-preview">
-                        <img src="food.png" alt="mero CHULO Preview">
-                    </div>
-                    <div class="project-info">
-                        <h3>Mero CHULO</h3>
-                        <p>Django-based recipe web app that lets users register, log in, and explore delicious recipes.</p>
-                        <div class="project-links">
-                            <a href="https://mero-chulo-1.onrender.com/" class="live-link" target="_blank">View Live</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="social-links">
-            <a href="https://github.com/prashannaChand" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/prashanna-chand-96a797304" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.facebook.com/prashanna.chand" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/prashanna_chand/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-gray-900/50">
+        <div class="container mx-auto px-4 fade-in">
+            <h2 class="text-4xl font-bold mb-8 text-center text-teal-200">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12 max-w-4xl mx-auto">
+                <div>
+                    <p class="text-lg leading-relaxed mb-4">
+                        I'm Prashanna, a software engineer driven by a passion for machine learning, web development, and scalable systems. 
+                        I specialize in creating intelligent, user-centric applications that solve real-world challenges.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Currently, I'm advancing my expertise in deep learning, NLP, and API-driven backend solutions. 
+                        I thrive on turning complex ideas into elegant, high-impact applications while embracing collaboration and continuous growth. 
+                        Ready to build something extraordinary? Let's connect!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container mx-auto px-4 fade-in">
+            <h2 class="text-4xl font-bold mb-8 text-center text-teal-200">Skills</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-900/70 p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold mb-2 text-teal-300">HTML & CSS</h3>
+                    <p>Designing responsive, visually appealing web interfaces with modern aesthetics.</p>
+                </div>
+                <div class="bg-gray-900/70 p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold mb-2 text-teal-300">JavaScript</h3>
+                    <p>Creating dynamic, interactive web applications with seamless functionality.</p>
+                </div>
+                <div class="bg-gray-900/70 p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold mb-2 text-teal-300">Python</h3>
+                    <p>Building machine learning models and data-driven applications efficiently.</p>
+                </div>
+                <div class="bg-gray-900/70 p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold mb-2 text-teal-300">C/C++</h3>
+                    <p>Developing high-performance algorithms and system-level solutions.</p>
+                </div>
+                <div class="bg-gray-900/70 p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold mb-2 text-teal-300">Java</h3>
+                    <p>Building robust, scalable backend systems and enterprise-grade applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-6 text-center">
+        <p class="text-teal-200">© 2025 Prashanna Chand. All rights reserved.</p>
     </footer>
 
     <script>
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
-        let isLight = localStorage.getItem('theme') === 'light';
+        
+        // Smooth scrolling and fade-in animations
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.section');
 
-        function setTheme(light) {
-            if (light) {
-                document.body.classList.add('light-theme');
-                themeIcon.textContent = '🌞';
-            } else {
-                document.body.classList.remove('light-theme');
-                themeIcon.textContent = '🌙';
-            }
-        }
-
-        setTheme(isLight);
-
-        themeToggle.addEventListener('click', () => {
-            isLight = !document.body.classList.contains('light-theme');
-            setTheme(isLight);
-            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = href.substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                    sections.forEach(section => {
+                        section.querySelector('.fade-in').classList.remove('visible');
+                    });
+                    setTimeout(() => {
+                        targetSection.querySelector('.fade-in').classList.add('visible');
+                    }, 100);
+                }
+            });
         });
+
+        // Intersection Observer for fade-in effect on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelector('.fade-in').classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => observer.observe(section));
     </script>
 </body>
 </html>
