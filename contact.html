@@ -1,304 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Page | Prashanna Chand">
-    <meta name="author" content="Prashanna Chand">
-    <title>Contact | Prashanna Chand</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        .bg-wave {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #0d9488, #f43f5e, #6b7280);
-            background-size: 400%;
-            animation: wave 15s ease infinite;
-            z-index: -1;
-        }
-        @keyframes wave {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .section {
-            flex: 1;
-            padding: 6rem 2rem 4rem;
-        }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .nav-link:hover {
-            color: #f9a8d4;
-            transform: scale(1.1);
-            transition: all 0.3s ease;
-        }
-        .contact-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .contact-info {
-            background: #222;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: #ffdd57;
-        }
-        .contact-info p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .contact-info .icon {
-            color: #ffdd57;
-            font-size: 1.2rem;
-        }
-        .contact-form {
-            background: #222;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        .contact-form h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: #ffdd57;
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-            color: #fff;
-        }
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            background: #333;
-            border: 1px solid #444;
-            border-radius: 6px;
-            color: #fff;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #ffdd57;
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(255, 221, 87, 0.2);
-        }
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
-        }
-        button {
-            background: #ffdd57;
-            color: #333;
-            padding: 0.8rem 2rem;
-            border: none;
-            border-radius: 6px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        button:hover {
-            background: #fff;
-            transform: translateY(-2px);
-        }
-        .success-message,
-        .error-message {
-            padding: 1rem;
-            border-radius: 6px;
-            margin-top: 1rem;
-            display: none;
-        }
-        .success-message {
-            background: #4CAF50;
-            color: white;
-        }
-        .error-message {
-            background: #f44336;
-            color: white;
-        }
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-        .social-links a {
-            color: #fff;
-            font-size: 1.8rem;
-            transition: color 0.3s;
-        }
-        .social-links a:hover {
-            color: #ffdd57;
-        }
-        @media (max-width: 768px) {
-            .section {
-                padding: 5rem 1rem 2rem;
-            }
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Page | Prashanna Chand">
+  <meta name="author" content="Prashanna Chand">
+  <title>Contact | Prashanna Chand</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0a0c10;
+      color: #e2e8f0;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .bg-wave {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background:
+        linear-gradient(0deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      animation: gridmove 60s linear infinite;
+    }
+    @keyframes gridmove {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 100px; }
+    }
+    .section {
+      flex: 1;
+      padding: 6rem 2rem 4rem;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .nav-link {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #38bdf8;
+      transition: width 0.3s ease-in-out;
+    }
+    .nav-link:hover::before {
+      width: 100%;
+    }
+    .nav-link:hover {
+      color: #38bdf8;
+    }
+    .contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .contact-info,
+    .contact-form {
+      background: #1f2937;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .contact-info h3,
+    .contact-form h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: #38bdf8;
+    }
+    .contact-info p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .contact-info .icon {
+      color: #38bdf8;
+      font-size: 1.2rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      background: #111827;
+      border: 1px solid #374151;
+      border-radius: 6px;
+      color: #e2e8f0;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #38bdf8;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+    }
+    .form-group textarea {
+      height: 150px;
+      resize: vertical;
+    }
+    button {
+      background: #38bdf8;
+      color: #0f172a;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    button:hover {
+      background: #0ea5e9;
+    }
+    .success-message,
+    .error-message {
+      padding: 1rem;
+      border-radius: 6px;
+      margin-top: 1rem;
+      display: none;
+    }
+    .success-message {
+      background: #4CAF50;
+      color: white;
+    }
+    .error-message {
+      background: #f44336;
+      color: white;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .social-links a {
+      color: #e2e8f0;
+      font-size: 1.8rem;
+      transition: color 0.3s;
+    }
+    .social-links a:hover {
+      color: #38bdf8;
+    }
+  </style>
 </head>
-<body class="bg-gray-800 text-white">
-    <div class="bg-wave"></div>
-
-    <!-- Navbar -->
-    <nav class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-3xl font-bold text-teal-400">Prashanna Chand</h1>
-            <div class="space-x-8">
-                <a href="index.html" class="nav-link text-lg hover:text-teal-300 transition">Home</a>
-                <a href="index.html#about" class="nav-link text-lg hover:text-teal-300 transition">About</a>
-                <a href="index.html#skills" class="nav-link text-lg hover:text-teal-300 transition">Skills</a>
-                <a href="projects.html" class="nav-link text-lg hover:text-teal-300 transition">Projects</a>
-                <a href="contact.html" class="nav-link text-lg hover:text-teal-300 transition">Contact</a>
-                <button id="theme-toggle" class="text-2xl hover:text-teal-300 transition">🌙</button>
+<body class="text-white">
+  <div class="bg-wave"></div>
+  <nav class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-3xl font-bold text-teal-400">Prashanna Chand</h1>
+      <div class="space-x-8">
+        <a href="index.html" class="nav-link text-lg">Home</a>
+        <a href="index.html#about" class="nav-link text-lg">About</a>
+        <a href="index.html#skills" class="nav-link text-lg">Skills</a>
+        <a href="projects.html" class="nav-link text-lg">Projects</a>
+        <a href="contact.html" class="nav-link text-lg">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <section id="contact" class="section">
+    <div class="container mx-auto px-4 fade-in">
+      <h2 class="text-4xl font-bold mb-8 text-center text-teal-200">Contact</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <p><i class="fas fa-map-marker-alt icon"></i>Kathmandu, Nepal</p>
+          <p><i class="fas fa-envelope icon"></i>chandprashanna99@gmail.com / prashannachand@proton.me</p>
+          <p><i class="fas fa-graduation-cap icon"></i>NCIT, Kathmandu</p>
+          <p><i class="fas fa-phone-alt icon"></i>9846250978</p>
+          <p><i class="fas fa-language icon"></i>Nepali, English, Hindi, Doteli</p>
+        </div>
+        <div class="contact-form">
+          <h3>Get In Touch</h3>
+          <form id="contact-form" action="https://formspree.io/f/xvgryolj" method="POST">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
             </div>
-        </div>
-    </nav>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container mx-auto px-4 fade-in">
-            <h2 class="text-4xl font-bold mb-8 text-center text-teal-200">Contact</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p><i class="fas fa-map-marker-alt icon"></i>Kathmandu, Nepal</p>
-                    <p><i class="fas fa-envelope icon"></i>chandprashanna99@gmail.com / prashannachand@proton.me</p>
-                    <p><i class="fas fa-graduation-cap icon"></i>NCIT, Kathmandu</p>
-                    <p><i class="fas fa-phone-alt icon"></i>9846250978</p>
-                    <p><i class="fas fa-language icon"></i>Nepali, English, Hindi, Doteli</p>
-                </div>
-                <div class="contact-form">
-                    <h3>Get In Touch</h3>
-                    <form id="contact-form" action="https://formspree.io/f/xvgryolj" method="POST">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit">Send Message</button>
-                        <div class="success-message">Message sent successfully!</div>
-                        <div class="error-message">Error sending message. Please try again.</div>
-                    </form>
-                </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
             </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+            <div class="success-message">Message sent successfully!</div>
+            <div class="error-message">Error sending message. Please try again.</div>
+          </form>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-6 text-center">
-        <div class="social-links">
-            <a href="https://github.com/prashannaChand" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/prashanna-chand/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.facebook.com/prashanna.chand" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/prashanna_chand/" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-        <p class="text-teal-200 mt-4">© 2025 Prashanna Chand. All rights reserved.</p>
-    </footer>
-
-    <script>
-        // Theme toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('bg-gray-100');
-            document.body.classList.toggle('text-gray-900');
-            document.body.classList.toggle('bg-gray-800');
-            document.body.classList.toggle('text-white');
-            themeToggle.textContent = document.body.classList.contains('bg-gray-100') ? '☀️' : '🌙';
-            document.querySelectorAll('.contact-info, .contact-form').forEach(el => {
-                el.classList.toggle('bg-gray-200');
-                el.classList.toggle('bg-[#222]');
-            });
-        });
-
-        // Fade-in animation on load
-        window.addEventListener('load', () => {
-            document.querySelector('.fade-in').classList.add('visible');
-        });
-
-        // Contact form handling with Formspree
-        const form = document.getElementById('contact-form');
-        const successMessage = document.querySelector('.success-message');
-        const errorMessage = document.querySelector('.error-message');
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            successMessage.style.display = 'none';
-            errorMessage.style.display = 'none';
-
-            const formData = new FormData(form);
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
-                });
-                if (response.ok) {
-                    successMessage.style.display = 'block';
-                    form.reset();
-                    setTimeout(() => {
-                        successMessage.style.display = 'none';
-                    }, 3000);
-                } else {
-                    errorMessage.style.display = 'block';
-                    setTimeout(() => {
-                        errorMessage.style.display = 'none';
-                    }, 3000);
-                }
-            } catch (error) {
-                errorMessage.style.display = 'block';
-                setTimeout(() => {
-                    errorMessage.style.display = 'none';
-                }, 3000);
-            }
-        });
-    </script>
+      </div>
+    </div>
+  </section>
+  <footer class="bg-gray-900 py-6 text-center">
+    <div class="social-links">
+      <a href="https://github.com/prashannaChand" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/prashanna-chand/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.facebook.com/prashanna.chand" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/prashanna_chand/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p class="text-teal-200 mt-4">© 2025 Prashanna Chand. All rights reserved.</p>
+  </footer>
+  <script>
+    window.addEventListener('load', () => {
+      document.querySelector('.fade-in').classList.add('visible');
+    });
+  </script>
 </body>
 </html>

@@ -1,196 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prashanna Chand - Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .bg-wave {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #0d9488, #f43f5e, #6b7280);
-            background-size: 400%;
-            animation: wave 15s ease infinite;
-            z-index: -1;
-        }
-        @keyframes wave {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 4rem 1rem;
-        }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .nav-link:hover {
-            color: #f9a8d4;
-            transform: scale(1.1);
-            transition: all 0.3s ease;
-        }
-        .hero .image-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .hero .image-container img {
-            width: 100%;
-            max-width: 480px;
-            height: 480px;
-            object-fit: cover;
-            border: 1px solid #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-        }
-        @media (max-width: 640px) {
-            .hero .image-container img {
-                height: 320px;
-                max-width: 100%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prashanna Chand - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0a0c10;
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+
+    .bg-wave {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background:
+        linear-gradient(0deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      animation: gridmove 60s linear infinite;
+    }
+
+    @keyframes gridmove {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 100px; }
+    }
+
+    .section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1rem;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav-link {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #38bdf8;
+      transition: width 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before {
+      width: 100%;
+    }
+
+    .nav-link:hover {
+      color: #38bdf8;
+    }
+
+    .hero .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      padding: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .hero .image-container:hover {
+      transform: scale(1.015);
+    }
+
+    .hero .image-container img {
+      width: 100%;
+      max-width: 460px;
+      height: 460px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    @media (max-width: 640px) {
+      .hero .image-container img {
+        height: 300px;
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body class="bg-gray-800 text-white">
-    <div class="bg-wave"></div>
+  <div class="bg-wave"></div>
 
-    <!-- Navbar -->
-    <nav class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-3xl font-bold text-teal-400">Prashanna Chand</h1>
-            <div class="space-x-8">
-                <a href="index.html" class="nav-link text-lg hover:text-teal-300 transition">Home</a>
-                <a href="#about" class="nav-link text-lg hover:text-teal-300 transition">About</a>
-                <a href="#skills" class="nav-link text-lg hover:text-teal-300 transition">Skills</a>
-                <a href="projects.html" class="nav-link text-lg hover:text-teal-300 transition">Projects</a>
-                <a href="contact.html" class="nav-link text-lg hover:text-teal-300 transition">Contact</a>
-        
-            </div>
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-3xl font-bold text-teal-400">Prashanna Chand</h1>
+      <div class="space-x-8">
+        <a href="index.html" class="nav-link text-lg hover:text-teal-300 transition">Home</a>
+        <a href="#about" class="nav-link text-lg hover:text-teal-300 transition">About</a>
+        <a href="#skills" class="nav-link text-lg hover:text-teal-300 transition">Skills</a>
+        <a href="projects.html" class="nav-link text-lg hover:text-teal-300 transition">Projects</a>
+        <a href="contact.html" class="nav-link text-lg hover:text-teal-300 transition">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="section hero">
+    <div class="container mx-auto px-4 text-center fade-in">
+      <div class="image-container mx-auto mb-6">
+        <img src="pp.jpg" alt="Prashanna Chand" />
+      </div>
+      <h2 class="text-5xl font-bold mb-4 text-teal-200">Prashanna Chand</h2>
+      <p class="text-2xl mb-6">Backend Developer | Django & AI Enthusiast</p>
+      <p class="text-lg mb-8 max-w-2xl mx-auto">
+        Building innovative solutions with a blend of code, data, and creativity. Let's create something impactful!
+      </p>
+      <div class="flex justify-center space-x-4">
+        <a href="contact.html" class="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-full transition text-lg">Connect With Me</a>
+        <a href="prashannachandCV.pdf" class="bg-gray-700 hover:bg-gray-600 text-white px-8 py-3 rounded-full transition text-lg">Download CV</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section bg-gray-900/50">
+    <div class="container mx-auto px-4 fade-in">
+      <h2 class="text-4xl font-bold mb-8 text-center text-teal-200">About Me</h2>
+      <div class="flex flex-col md:flex-row items-center gap-12 max-w-4xl mx-auto">
+        <div>
+          <p class="text-lg leading-relaxed mb-4">
+            I'm Prashanna, a software engineer with a strong focus on backend development, scalable architectures, and system performance. 
+            I specialize in building robust API-driven systems and services that power seamless user experiences.
+          </p>
+          <p class="text-lg leading-relaxed">
+            I'm also deeply interested in machine learning and AI, especially in integrating intelligent models into real-world applications. 
+            I enjoy solving complex backend challenges, optimizing data flows, and developing secure, maintainable systems. 
+            Let’s build something impactful. Feel free to reach out!
+          </p>
         </div>
-    </nav>
+      </div>
+    </div>
+  </section>
 
-    <!-- Home Section -->
-    <section id="home" class="section hero">
-        <div class="container mx-auto px-4 text-center fade-in">
-            <div class="image-container mx-auto mb-6">
-                <img src="pp.jpg" alt="Prashanna Chand">
-            </div>
-            <h2 class="text-5xl font-bold mb-4 text-teal-200">Prashanna Chand</h2>
-            <p class="text-2xl mb-6">Backend developer | Django & AI Enthusiast</p>
-            <p class="text-lg mb-8 max-w-2xl mx-auto">Building innovative solutions with a blend of code, data, and creativity. Let's create something impactful!</p>
-            <div class="flex justify-center space-x-4">
-                <a href="contact.html" class="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-full transition text-lg">Connect With Me</a>
-                <a href="Prashanna_CV.docx" class="bg-gray-700 hover:bg-gray-600 text-white px-8 py-3 rounded-full transition text-lg">Download CV</a>
-            </div>
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <div class="container mx-auto px-4 fade-in">
+      <h2 class="text-4xl font-bold mb-8 text-center text-teal-200">Skills</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Skills with logos -->
+        <div class="bg-gray-900/70 p-6 rounded-xl shadow-lg flex items-center space-x-4">
+          <i class="devicon-html5-plain text-4xl text-orange-500"></i>
+          <div><h3 class="text-xl font-semibold text-teal-300">HTML</h3><p>Semantic and structured web content.</p></div>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section bg-gray-900/50">
-        <div class="container mx-auto px-4 fade-in">
-            <h2 class="text-4xl font-bold mb-8 text-center text-teal-200">About Me</h2>
-            <div class="flex flex-col md:flex-row items-center gap-12 max-w-4xl mx-auto">
-                <div>
-                    <p class="text-lg leading-relaxed mb-4">
-                        I'm Prashanna, a software engineer driven by a passion for machine learning, web development, and scalable systems. 
-                        I specialize in creating intelligent, user-centric applications that solve real-world challenges.
-                    </p>
-                    <p class="text-lg leading-relaxed">
-                        Currently, I'm advancing my expertise in deep learning, NLP, and API-driven backend solutions. 
-                        I thrive on turning complex ideas into elegant, high-impact applications while embracing collaboration and continuous growth. 
-                        Ready to build something extraordinary? Let's connect!
-                    </p>
-                </div>
-            </div>
+        <div class="bg-gray-900/70 p-6 rounded-xl shadow-lg flex items-center space-x-4">
+          <i class="devicon-css3-plain text-4xl text-blue-400"></i>
+          <div><h3 class="text-xl font-semibold text-teal-300">CSS</h3><p>Responsive and stylish web designs.</p></div>
         </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container mx-auto px-4 fade-in">
-            <h2 class="text-4xl font-bold mb-8 text-center text-teal-200">Skills</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-900/70 p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
-                    <h3 class="text-xl font-semibold mb-2 text-teal-300">HTML & CSS</h3>
-                    <p>Designing responsive, visually appealing web interfaces with modern aesthetics.</p>
-                </div>
-                <div class="bg-gray-900/70 p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
-                    <h3 class="text-xl font-semibold mb-2 text-teal-300">JavaScript</h3>
-                    <p>Creating dynamic, interactive web applications with seamless functionality.</p>
-                </div>
-                <div class="bg-gray-900/70 p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
-                    <h3 class="text-xl font-semibold mb-2 text-teal-300">Python</h3>
-                    <p>Building machine learning models and data-driven applications efficiently.</p>
-                </div>
-                <div class="bg-gray-900/70 p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
-                    <h3 class="text-xl font-semibold mb-2 text-teal-300">C/C++</h3>
-                    <p>Developing high-performance algorithms and system-level solutions.</p>
-                </div>
-                <div class="bg-gray-900/70 p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
-                    <h3 class="text-xl font-semibold mb-2 text-teal-300">Java</h3>
-                    <p>Building robust, scalable backend systems and enterprise-grade applications.</p>
-                </div>
-            </div>
+        <div class="bg-gray-900/70 p-6 rounded-xl shadow-lg flex items-center space-x-4">
+          <i class="devicon-javascript-plain text-4xl text-yellow-400"></i>
+          <div><h3 class="text-xl font-semibold text-teal-300">JavaScript</h3><p>Interactive UI and logic.</p></div>
         </div>
-    </section>
+        <div class="bg-gray-900/70 p-6 rounded-xl shadow-lg flex items-center space-x-4">
+          <i class="devicon-python-plain text-4xl text-blue-300"></i>
+          <div><h3 class="text-xl font-semibold text-teal-300">Python</h3><p>APIs and ML solutions.</p></div>
+        </div>
+        <div class="bg-gray-900/70 p-6 rounded-xl shadow-lg flex items-center space-x-4">
+          <i class="devicon-cplusplus-plain text-4xl text-blue-500"></i>
+          <div><h3 class="text-xl font-semibold text-teal-300">C/C++</h3><p>Efficient system-level programs.</p></div>
+        </div>
+        <div class="bg-gray-900/70 p-6 rounded-xl shadow-lg flex items-center space-x-4">
+          <i class="devicon-java-plain text-4xl text-red-400"></i>
+          <div><h3 class="text-xl font-semibold text-teal-300">Java</h3><p>Enterprise-level apps.</p></div>
+        </div>
+        <div class="bg-gray-900/70 p-6 rounded-xl shadow-lg flex items-center space-x-4">
+          <i class="devicon-django-plain text-4xl text-green-500"></i>
+          <div><h3 class="text-xl font-semibold text-teal-300">Django</h3><p>Robust web frameworks.</p></div>
+        </div>
+        <div class="bg-gray-900/70 p-6 rounded-xl shadow-lg flex items-center space-x-4">
+          <i class="devicon-github-original text-4xl"></i>
+          <div><h3 class="text-xl font-semibold text-teal-300">GitHub</h3><p>Version control & collaboration.</p></div>
+        </div>
+        <div class="bg-gray-900/70 p-6 rounded-xl shadow-lg flex items-center space-x-4">
+          <i class="devicon-docker-plain text-4xl text-blue-400"></i>
+          <div><h3 class="text-xl font-semibold text-teal-300">Docker</h3><p>Containerized deployments.</p></div>
+        </div>
+        <div class="bg-gray-900/70 p-6 rounded-xl shadow-lg flex items-center space-x-4">
+          <i class="devicon-postgresql-plain text-4xl text-blue-300"></i>
+          <div><h3 class="text-xl font-semibold text-teal-300">PostgreSQL</h3><p>Reliable relational database.</p></div>
+        </div>
+        <div class="bg-gray-900/70 p-6 rounded-xl shadow-lg flex items-center space-x-4">
+          <i class="devicon-mongodb-plain text-4xl text-green-500"></i>
+          <div><h3 class="text-xl font-semibold text-teal-300">MongoDB</h3><p>Flexible NoSQL database.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-6 text-center">
-        <p class="text-teal-200">© 2025 Prashanna Chand. All rights reserved.</p>
-    </footer>
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-6 text-center">
+    <p class="text-teal-200">© 2025 Prashanna Chand. All rights reserved.</p>
+  </footer>
 
-    <script>
-        
-        // Smooth scrolling and fade-in animations
-        const navLinks = document.querySelectorAll('.nav-link');
-        const sections = document.querySelectorAll('.section');
+  <script>
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.section');
 
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                const href = link.getAttribute('href');
-                if (href.startsWith('#')) {
-                    e.preventDefault();
-                    const targetId = href.substring(1);
-                    const targetSection = document.getElementById(targetId);
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
-                    sections.forEach(section => {
-                        section.querySelector('.fade-in').classList.remove('visible');
-                    });
-                    setTimeout(() => {
-                        targetSection.querySelector('.fade-in').classList.add('visible');
-                    }, 100);
-                }
-            });
-        });
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href.startsWith('#')) {
+          e.preventDefault();
+          const targetId = href.substring(1);
+          const targetSection = document.getElementById(targetId);
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+          sections.forEach(section => {
+            section.querySelector('.fade-in').classList.remove('visible');
+          });
+          setTimeout(() => {
+            targetSection.querySelector('.fade-in').classList.add('visible');
+          }, 100);
+        }
+      });
+    });
 
-        // Intersection Observer for fade-in effect on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.querySelector('.fade-in').classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelector('.fade-in').classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
 
-        sections.forEach(section => observer.observe(section));
-    </script>
+    sections.forEach(section => observer.observe(section));
+  </script>
 </body>
 </html>
